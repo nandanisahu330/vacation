@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\PostApiController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,3 +20,5 @@ Route::prefix('api')->name('api.')->group(function () {
     Route::post('/posts/{post}', [PostApiController::class, 'update'])->name('posts.update');
     Route::delete('/posts/{post}', [PostApiController::class, 'destroy'])->name('posts.destroy');
 });
+
+Route::get('/test', [TestController::class, 'index']);
